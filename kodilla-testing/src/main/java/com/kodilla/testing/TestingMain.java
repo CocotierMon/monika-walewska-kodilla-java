@@ -5,7 +5,7 @@ import com.kodilla.testing.user.SimpleUser;
 
 public class TestingMain {
     public static void main(String[] args){
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+       /* SimpleUser simpleUser = new SimpleUser("theForumUser");
 
         String result = simpleUser.getUsername();
         if (result.equals("theForumUser")){
@@ -28,6 +28,6 @@ public class TestingMain {
             System.out.println("Test kalkulatora. Wartość oczekiwana: -1, wartość otrzymana: " + substractResult + ". Test ok");
         } else {
             System.out.println("Błąd odejmowania");
-        }
+        }*/
     }
 }
