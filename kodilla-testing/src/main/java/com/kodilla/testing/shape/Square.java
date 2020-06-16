@@ -3,11 +3,13 @@ package com.kodilla.testing.shape;
 public class Square implements Shape{
 
     private final String shape;
-    private final int a = 4;
-    private final int field = a * a;
+    private final int a;
+    private int field;
 
-    public Square(String shape){
+    public Square(String shape, int a){
         this.shape = shape;
+        this.a = a;
+        setField();
     }
 
     @Override
@@ -21,7 +23,9 @@ public class Square implements Shape{
     public String getShapeName(){
         return this.shape;
     }
-
+    public void setField(){
+        field = a * a;
+    }
     public int getField(){
         return field;
     }

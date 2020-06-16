@@ -3,11 +3,13 @@ package com.kodilla.testing.shape;
 public class Circle implements Shape{
 
     private final String shape;
-    private final int r = 5;
-    private final int field = (int) (3.14 * r * r);
+    private final int r;
+    private int field;
 
-    public Circle(String shape){
+    public Circle(String shape, int r){
         this.shape = shape;
+        this.r = r;
+        setField();
     }
 
     @Override
@@ -22,6 +24,9 @@ public class Circle implements Shape{
         return this.shape;
     }
 
+    public void setField(){
+        this.field = (int) (3.14*r*r);
+    }
     public int getField(){
         return field;
     }
