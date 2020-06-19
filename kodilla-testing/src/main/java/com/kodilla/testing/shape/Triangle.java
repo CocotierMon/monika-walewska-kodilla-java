@@ -7,11 +7,11 @@ public class Triangle implements Shape{
     private final int h;
     private int field;
 
-    public Triangle(String shape, int a, int h){
-        this.shape = shape;
+    public Triangle(int a, int h){
+        this.shape = getShapeName();
         this.a = a;
         this.h = h;
-        setField();
+        this.field = getField();
     }
 
     @Override
@@ -23,13 +23,10 @@ public class Triangle implements Shape{
     }
 
     public String getShapeName(){
-        return this.shape;
+        return "triangle";
     }
 
-    private void setField() {
-        this.field = (int) (0.5*a*h);
-    }
     public int getField(){
-        return field;
+        return field = (int) (0.5*a*h);
     }
 }

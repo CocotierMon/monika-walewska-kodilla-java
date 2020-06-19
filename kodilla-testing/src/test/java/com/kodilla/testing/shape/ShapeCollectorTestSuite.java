@@ -27,12 +27,13 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector testShapeCollector = new ShapeCollector();
         //When
-        testShapeCollector.addFigure(new Circle("circle", 4));
-        testShapeCollector.addFigure(new Triangle("triangle", 4, 6));
+        testShapeCollector.addFigure(new Circle(4));
+        testShapeCollector.addFigure(new Triangle(4, 6));
+        testShapeCollector.addFigure(new Triangle(6, 7));
         // Then
         int shapeListSize = testShapeCollector.getShapeListSize();
         testShapeCollector.showFigures();
-        Assert.assertEquals(2, shapeListSize);
+        Assert.assertEquals(3, shapeListSize);
     }
 
    @Test
@@ -40,10 +41,10 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector testShapeCollector = new ShapeCollector();
         //When
-       Circle circle = new Circle("circle", 5);
+       Circle circle = new Circle(5);
        testShapeCollector.addFigure(circle);
-       testShapeCollector.addFigure(new Triangle("triangle", 3, 4));
-       testShapeCollector.addFigure(new Square ("square", 7));
+       testShapeCollector.addFigure(new Triangle( 3, 4));
+       testShapeCollector.addFigure(new Square ( 5));
        testShapeCollector.removeFigure(circle);
         // Then
         int shapeListSize = testShapeCollector.getShapeListSize();
@@ -56,9 +57,9 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector testShapeCollector = new ShapeCollector();
         //When
-        testShapeCollector.addFigure(new Circle("circle", 2));
-        testShapeCollector.addFigure(new Triangle("triangle", 4, 7));
-        testShapeCollector.addFigure(new Square("square", 4));
+        testShapeCollector.addFigure(new Circle(2));
+        testShapeCollector.addFigure(new Triangle(4, 7));
+        testShapeCollector.addFigure(new Square(4));
         // Then
         testShapeCollector.showFigures();
         Assert.assertEquals("circle", testShapeCollector.getFigure(0).getShapeName() );    }

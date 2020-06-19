@@ -6,10 +6,10 @@ public class Circle implements Shape{
     private final int r;
     private int field;
 
-    public Circle(String shape, int r){
-        this.shape = shape;
+    public Circle(int r){
+        this.shape = getShapeName();
         this.r = r;
-        setField();
+        this.field = getField();
     }
 
     @Override
@@ -21,13 +21,10 @@ public class Circle implements Shape{
     }
 
     public String getShapeName(){
-        return this.shape;
+        return "circle";
     }
 
-    public void setField(){
-        this.field = (int) (3.14*r*r);
-    }
     public int getField(){
-        return field;
+        return field = (int) (3.14*r*r);
     }
 }

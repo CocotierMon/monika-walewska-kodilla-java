@@ -6,10 +6,10 @@ public class Square implements Shape{
     private final int a;
     private int field;
 
-    public Square(String shape, int a){
-        this.shape = shape;
+    public Square(int a){
+        this.shape = getShapeName();
         this.a = a;
-        setField();
+        this.field = getField();
     }
 
     @Override
@@ -21,12 +21,10 @@ public class Square implements Shape{
     }
 
     public String getShapeName(){
-        return this.shape;
+        return "square";
     }
-    public void setField(){
-        field = a * a;
-    }
+
     public int getField(){
-        return field;
+        return field = a * a;
     }
 }
