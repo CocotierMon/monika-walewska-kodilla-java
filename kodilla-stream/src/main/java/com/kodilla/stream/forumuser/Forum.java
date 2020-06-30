@@ -12,7 +12,7 @@ public class Forum {
         theUsersList.add(new ForumUser(3, "cccccc", 'F', 1985,3, 20, 10));
         theUsersList.add(new ForumUser(4, "dddddd", 'F', 2000,9, 15, 0));
         theUsersList.add(new ForumUser(5, "eeeeee", 'M', 2010,11, 1, 6));
-        theUsersList.add(new ForumUser(6, "ffffff", 'M', 2000,9, 15, 0));
+        theUsersList.add(new ForumUser(6, "ffffff", 'M', 2000,5, 15, 1));
         theUsersList.add(new ForumUser(4, "gggggg", 'M', 1999,4, 3, 50));
     }
 
