@@ -11,4 +11,11 @@ public class ArrayOperationsTestSuite {
         //Then
         Assert.assertEquals(ArrayOperations.getAverage(numbers), 5.5, 0);
     }
+    @Test
+    public void testGetAverageEmptyTable() {
+        //When
+        int[] numbers = {};
+        //Then
+        Assert.assertEquals(ArrayOperations.getAverage(numbers), 0, 0);
+    }
 }
