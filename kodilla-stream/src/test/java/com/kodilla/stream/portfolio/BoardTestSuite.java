@@ -152,7 +152,8 @@ public class BoardTestSuite {
         project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(taskList -> taskList.getTasks().stream())
-                .mapToDouble(task -> DAYS.between(task.getCreated(),task.getDeadline()))
+                .mapToDouble(task -> DAYS.between(task.getCreated(), LocalDate.now()))
+                        //task.getDeadline()))
                 .average().orElse(0);
 
         //Then
