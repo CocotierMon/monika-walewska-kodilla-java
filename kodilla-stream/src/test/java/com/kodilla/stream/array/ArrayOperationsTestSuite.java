@@ -16,6 +16,6 @@ public class ArrayOperationsTestSuite {
         //When
         int[] numbers = {};
         //Then
-        Assert.assertEquals(ArrayOperations.getAverage(numbers), 0, 0);
+        Assert.assertEquals(0, ArrayOperations.getAverage(numbers), 0);
     }
 }
