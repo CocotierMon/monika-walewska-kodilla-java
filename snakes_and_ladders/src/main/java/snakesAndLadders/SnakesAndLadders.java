@@ -22,7 +22,6 @@ public class SnakesAndLadders extends Application{
         Scene scene = new Scene(borderPane, 1100, 900);
         borderPane.getChildren().addAll();
 
-
         primaryStage.setTitle("Snakes and ladders");
         primaryStage.setScene(scene);
         primaryStage.show();
