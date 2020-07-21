@@ -41,7 +41,7 @@ public class BorderPaneController {
             blueCheckBox.setDisable(true);
             bluePawn.setVisible(false);
             redCheckBox.setDisable(true);
-            bluePawn.setVisible(false);
+            redPawn.setVisible(false);
             greenCheckBox.setDisable(true);
             gridPane.add(purplePawn, 1, 9);
             gridPane.add(greenPawn, 1, 9);
@@ -75,7 +75,7 @@ public class BorderPaneController {
             blueCheckBox.setDisable(true);
             bluePawn.setVisible(false);
             redCheckBox.setDisable(true);
-            redPawn.setVisible(false);
+            purplePawn.setVisible(false);
             purpleCheckBox.setDisable(true);
             gridPane.add(greenPawn, 1, 9);
             gridPane.add(redPawn, 1, 9);
