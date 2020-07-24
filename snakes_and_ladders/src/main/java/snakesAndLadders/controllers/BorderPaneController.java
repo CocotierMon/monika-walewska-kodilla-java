@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-
 public class BorderPaneController {
 
     public static String colour;
@@ -29,6 +28,7 @@ public class BorderPaneController {
     public ImageView dice;
     public Label result;
     public Label doMove;
+    public Button go;
 
     @FXML
     void initialize(){}
@@ -86,15 +86,53 @@ public class BorderPaneController {
         return (Math.random() * ((max - min) + 1)) + min;
     }
 
-    public void diceRolling(){
+    public Label diceRolling(){
         if(button.isPressed()) {
                 result.setText(String.valueOf((int)createRandomNumber(1, 6)));
                 dice.setVisible(true);
                 doMove.setVisible(true);
         }
+        return result;
     }
 
     public void moveThePane(){
 
+        int move = Integer.parseInt(result.getText());
+
+        if(GridPane.getRowIndex(purplePawn)%2 == 0){ // jeśli wiersz jest parzysty (odejmujemy wynik rzutu)
+            if(GridPane.getColumnIndex(purplePawn) - move < 1){ // jeśli długość kolumny - wynik rzutu < 1
+                // - tutaj mam problem z obliczeniem docelowej kolumny, pozostałe warunki raczej działają raczej dobrze
+
+                int x = move - GridPane.getColumnIndex(purplePawn);
+                int column = 10-x-GridPane.getColumnIndex(purplePawn)+1;
+                int row = GridPane.getRowIndex(purplePawn)-1;
+
+                gridPane.add(purplePawn, column, row);
+
+                // jeśli długość kolumny - wynik rzutu > 1
+            } else {
+                int column = GridPane.getColumnIndex(purplePawn) - move;
+                int row = GridPane.getRowIndex(purplePawn);
+                gridPane.add(purplePawn, column, row);
+            }
+        }
+        // jeśli wiersz jest nieparzysty (dodajemy wynik rzutu)
+        else{
+            if(GridPane.getColumnIndex(purplePawn) + move > 10){ // jeśli dlugość kolumny + wynik rzutu > 10
+                int x = 10 - GridPane.getColumnIndex(purplePawn);
+                int y = move - x - 1;
+
+                int column = 10 - y;
+                int row = GridPane.getRowIndex(purplePawn)-1;
+
+                gridPane.add(purplePawn, column, row);
+
+                // jeśli długość kolumny + wynik rzutu < 10
+            } else {
+                int column = GridPane.getColumnIndex(purplePawn) + move;
+                int row = GridPane.getRowIndex(purplePawn);
+                gridPane.add(purplePawn, column, row);
+            }
+        }
     }
 }
