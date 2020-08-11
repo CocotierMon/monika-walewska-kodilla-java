@@ -652,7 +652,7 @@
          </children></Pane>
    </left>
    <right>
-      <Pane BorderPane.alignment="TOP_LEFT">
+      <Pane minWidth="-Infinity" BorderPane.alignment="TOP_LEFT">
          <children>
             <Label layoutX="5.0" layoutY="51.0" style="-fx-font-size: 20;" text="You rolled out:">
                <padding>
@@ -662,11 +662,10 @@
                <padding>
                   <Insets left="10.0" right="10.0" />
                </padding></Label>
-            <Label id="moveText" fx:id="doMove" layoutX="5.0" layoutY="281.0" style="-fx-font-size: 20;" text="Move your pawn!" visible="false">
+            <Label id="moveText" fx:id="doMove" layoutX="5.0" layoutY="281.0" prefHeight="88.0" prefWidth="171.0" style="-fx-font-size: 20;" text="Move your pawn!" visible="false" wrapText="true">
                <padding>
                   <Insets left="10.0" right="10.0" />
                </padding></Label>
-            <Button fx:id="go" layoutX="32.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#moveThePane" prefHeight="69.0" prefWidth="93.0" text="Move" />
          </children>
          <BorderPane.margin>
             <Insets />
@@ -678,12 +677,14 @@
    <bottom>
       <Pane maxHeight="200.0" maxWidth="1100.0" minHeight="200.0" minWidth="1100.0" prefHeight="200.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="button" fx:id="button" layoutX="253.0" layoutY="43.0" mnemonicParsing="false" onMousePressed="#diceRolling" prefHeight="90.0" prefWidth="147.0" text="Trow the dice!" />
-            <ImageView id="dice" fx:id="dice" fitHeight="150.0" fitWidth="200.0" layoutX="491.0" layoutY="25.0" onMouseClicked="#diceRolling" visible="false">
+            <Button id="button" fx:id="button" layoutX="253.0" layoutY="43.0" mnemonicParsing="false" onMousePressed="#diceRolling" prefHeight="90.0" prefWidth="147.0" text="Trow the dice!" visible="false" />
+            <ImageView id="dice" fx:id="dice" fitHeight="150.0" fitWidth="200.0" layoutX="578.0" layoutY="13.0" onMouseClicked="#diceRolling" visible="false">
                <image>
                   <Image url="@dice.gif" />
                </image>
             </ImageView>
+            <Label fx:id="winner" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="15.0" prefHeight="168.0" prefWidth="888.0" style="-fx-background-color: #f7b705; -fx-font-size: 45; -fx-font-family: Impact;" textAlignment="CENTER" visible="false" />
+            <Button fx:id="go" layoutX="400.0" layoutY="43.0" mnemonicParsing="false" onMousePressed="#moveThePane" onMouseReleased="#hide" prefHeight="90.0" prefWidth="147.0" text="Move" visible="false" />
          </children>
       </Pane>
    </bottom>
