@@ -1,9 +1,9 @@
 package com.kodilla.good.patterns.challenges;
 
 public class User {
-    String name;
-    String lastName;
-    String email;
+    private String name;
+    private String lastName;
+    private String email;
 
     public User(String name, String lastName, String email) {
         this.name = name;
