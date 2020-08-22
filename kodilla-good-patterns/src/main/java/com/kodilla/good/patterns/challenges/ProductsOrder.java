@@ -6,7 +6,7 @@ public class ProductsOrder implements ProductOrder{
     public boolean order(User user, Product product){
 
         if(product != null){
-        System.out.println("Koszyk użytkownika " + user + " zawiera: " + product);
+            System.out.println("Koszyk użytkownika " + user + " zawiera: " + product);
         }
         return true;
     }
