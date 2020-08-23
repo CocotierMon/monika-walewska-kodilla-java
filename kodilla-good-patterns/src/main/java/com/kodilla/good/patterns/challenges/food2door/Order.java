@@ -1,8 +1,5 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
 
     private User user;
@@ -31,19 +28,12 @@ public class Order {
         this.product = product;
     }
 
-    public int getAmmount() {
-        return ammount;
+    @Override
+    public String toString() {
+        return "Zamówienie: " +
+                "użytkownik: " + user +
+                ", produkt: " + product +
+                ", liczba produktów: " + ammount;
     }
-
-    public void setAmmount(int ammount) {
-        this.ammount = ammount;
-    }
-
-    public static List<Order> generateOrderList(){
-
-        List<Order>orderList = new ArrayList<>();
-        return orderList;
-    }
-
 }
 
