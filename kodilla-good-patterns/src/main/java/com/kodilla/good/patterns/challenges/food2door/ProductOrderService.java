@@ -2,27 +2,27 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 public class ProductOrderService {
 
-    public ProductOrderService(final ProductOrder productOrder) {
+    public ProductOrderService() {
     }
 
-    public OrderDto process(final ProductOrder productOrder){
+    public OrderDto process(){
 
         OrderGenerator orderGenerator = new OrderGenerator();
 
-        boolean isOrdered = productOrder.order(orderGenerator.getUser(), orderGenerator.getOrder());
+        boolean isOrdered = orderGenerator.getOrder() != null;
+
         if(isOrdered){
-            return new OrderDto(orderGenerator.getOrder(), true);
-        } else {
-            return new OrderDto(orderGenerator.getOrder(), false);
+            return new OrderDto(orderGenerator.getOrder(), isOrdered);
         }
+        return null;
     }
 
     public static void main(String[] args) {
 
         OrderGenerator orderGenerator = new OrderGenerator();
         orderGenerator.createOrder();
-        ProductOrderService productOrderService = new ProductOrderService(orderGenerator);
-        productOrderService.process(orderGenerator);
+        ProductOrderService productOrderService = new ProductOrderService();
+        productOrderService.process();
 
     }
 }

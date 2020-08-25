@@ -1,22 +1,45 @@
 package com.kodilla.good.patterns.challenges.food2door;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExtraFoodShop implements Producers {
 
-    Product product = new Product("Marchew", 3);
-    Product product1 = new Product("Ziemniaki", 4);
-    Product product2 = new Product("Masło",10);
+    public ExtraFoodShop() {
+        this.initList();
+    }
 
+    List<Product> productList = new ArrayList<>();
+
+    public void initList() {
+        Product product = new Product("Marchew", 3);
+        Product product1 = new Product("Ziemniaki", 4);
+        Product product2 = new Product("Masło", 10);
+
+        productList.add(product);
+        productList.add(product1);
+        productList.add(product2);
+
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
 
     @Override
     public void process() {
-        System.out.println("Zamówienie : " + product);
+    }
+
+    @Override
+    public int getValue() {
+        return 0;
     }
 
     @Override
     public String toString() {
         String location = "Lodz";
         String name = "Extra-food shop";
-        return product +
+        return productList +
                 ", z lokalizacji: " + location +
                 ", ze sklepu: " + name;
     }

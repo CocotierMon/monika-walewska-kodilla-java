@@ -2,8 +2,8 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 public class OrderDto {
 
-    public Order order;
-    public boolean isOrdered;
+    private Order order;
+    private boolean isOrdered;
 
     public OrderDto(final Order order, final boolean isOrdered){
         this.order = order;

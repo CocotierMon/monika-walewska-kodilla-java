@@ -4,12 +4,12 @@ public class Order {
 
     private User user;
     private Producers product;
-    private int ammount;
+    private final int amount;
 
-    public Order(User user, Producers product, int ammount) {
+    public Order(User user, Producers product, int amount) {
         this.user = user;
         this.product = product;
-        this.ammount = ammount;
+        this.amount = amount;
     }
 
     public User getUser() {
@@ -28,12 +28,14 @@ public class Order {
         this.product = product;
     }
 
+    public int getAmount() { return amount; }
+
     @Override
     public String toString() {
         return "Zamówienie: " +
                 "użytkownik: " + user +
                 ", produkt: " + product +
-                ", liczba produktów: " + ammount;
+                ", liczba produktów: " + amount + '\n';
     }
 }
 

@@ -5,17 +5,21 @@ public class OrderGenerator implements ProductOrder{
     private User user;
     private Order order;
 
-    public OrderGenerator() {
-    }
-
+    @Override
     public void createOrder() {
 
         User user = new User("Anna", "Kowalska", "anko.o2.pl");
         ExtraFoodShop extraFoodShop = new ExtraFoodShop();
+        GlutenFreeShop glutenFreeShop = new GlutenFreeShop();
 
-        Order order = new Order(user, extraFoodShop.product2, 1);
+        Order order = new Order(user, extraFoodShop.productList.get(1), 1);
+        Order order1 = new Order(user, glutenFreeShop.productList.get(1), 3);
 
-        System.out.println(order);
+        int orderValue = order.getAmount() * order.getProduct().getValue();
+        int order1Value = order1.getAmount() * order1.getProduct().getValue();
+
+        System.out.println(order + "Całkowita wartość zamówienia: " +orderValue);
+        System.out.println(order1 + "Całkowita wartość zamówienia: "+ order1Value);
     }
 
     public Order getOrder() {
@@ -26,9 +30,4 @@ public class OrderGenerator implements ProductOrder{
         return user;
     }
 
-    @Override
-    public boolean order(User user, Order order) {
-        if(order != null);
-        return true;
-    }
 }

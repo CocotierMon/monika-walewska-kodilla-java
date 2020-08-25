@@ -2,8 +2,8 @@ package com.kodilla.good.patterns.challenges.food2door;
 
 public class Product implements Producers {
 
-    private String product;
-    private int value;
+    private final String product;
+    private final int value;
 
     public Product(String product, int value) {
         this.product = product;
@@ -21,6 +21,10 @@ public class Product implements Producers {
 
     @Override
     public void process() {
+    }
 
+    @Override
+    public int getValue() {
+        return value;
     }
 }
