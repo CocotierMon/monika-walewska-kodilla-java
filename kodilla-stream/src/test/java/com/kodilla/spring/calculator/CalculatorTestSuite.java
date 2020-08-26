@@ -22,12 +22,24 @@ public class CalculatorTestSuite {
         double add = calculator.add(5, 5);
         double sub = calculator.sub(5,5);
         double mul = calculator.mul(5,5);
-        double div = calculator.div(5,0);
         //Then
         Assert.assertEquals(10, add, 0.1);
         Assert.assertEquals(0, sub, 0.1);
         Assert.assertEquals(25, mul, 0.1);
-        Assert.assertEquals(Infinity, div, 0.1);
+    }
 
+    @Test
+    public void divTest(){
+        //Given
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Calculator calculator = applicationContext.getBean(Calculator.class);
+        //When
+        try {
+            throw new IllegalArgumentException();
+        } catch (IllegalArgumentException e){
+            System.out.println('\n' + " " + "!!! Błąd dzielenia przez 0 !!!" + '\n' + e);
+        }
+        //Then
+        Assert.assertEquals(Infinity, calculator.div(5, 0), 0.1);
     }
 }

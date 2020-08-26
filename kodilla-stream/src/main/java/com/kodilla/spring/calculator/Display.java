@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class Display {
 
     public static void displayValue(double val){
-        System.out.println("Wynik działania: " + val);
+        System.out.println("Wynik działania: " + val + '\n');
     }
 }
