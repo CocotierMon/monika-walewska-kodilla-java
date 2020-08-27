@@ -18,7 +18,6 @@ public class ExtraFoodShop implements Producers {
         Product product = new Product("Marchew", 3);
         Product product1 = new Product("Ziemniaki", 4);
         Product product2 = new Product("Masło", 10);
-
         productList.add(product);
         productList.add(product1);
         productList.add(product2);

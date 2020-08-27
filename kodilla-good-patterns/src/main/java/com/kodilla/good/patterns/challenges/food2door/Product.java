@@ -16,7 +16,8 @@ public class Product implements Producers {
 
     @Override
     public String toString() {
-        return '\n' + product + ", o wartości: " + value;
+        return '\n' + product +
+                ", o wartości: " + value;
     }
 
     @Override

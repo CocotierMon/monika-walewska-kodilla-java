@@ -25,6 +25,7 @@ public class Order {
     }
 
     public void setProduct(Producers product) {
+
         this.product = product;
     }
 

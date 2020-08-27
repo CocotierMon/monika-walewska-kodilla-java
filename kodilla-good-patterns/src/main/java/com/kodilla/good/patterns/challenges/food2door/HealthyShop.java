@@ -18,7 +18,6 @@ public class HealthyShop implements Producers{
         Product product = new Product("Pietruszka", 3);
         Product product1 = new Product("Ser", 5);
         Product product2 = new Product("Szynka",10);
-
         productList.add(product);
         productList.add(product1);
         productList.add(product2);

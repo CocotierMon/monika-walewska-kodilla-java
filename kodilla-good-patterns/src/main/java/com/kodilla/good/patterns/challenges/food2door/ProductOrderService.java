@@ -23,6 +23,5 @@ public class ProductOrderService {
         orderGenerator.createOrder();
         ProductOrderService productOrderService = new ProductOrderService();
         productOrderService.process();
-
     }
 }
