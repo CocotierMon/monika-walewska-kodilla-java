@@ -32,10 +32,10 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Zamówienie: " +
-                "użytkownik: " + user +
-                ", produkt: " + product +
-                ", liczba produktów: " + amount + '\n';
+        return '\n' + "Złożono zamówienie: " + '\n' +
+                "użytkownik: " + user + '\n' +
+                " produkt: " + product +
+                " liczba produktów: " + amount + '\n';
     }
 }
 

@@ -5,6 +5,9 @@ import java.util.List;
 
 public class GlutenFreeShop implements Producers {
 
+    private final String name = "Gluten Free Shop";
+    private final String location = "Zgierz";
+
     public GlutenFreeShop() {
         this.initList();
     }
@@ -34,12 +37,11 @@ public class GlutenFreeShop implements Producers {
         return 0;
     }
 
-    @Override
-    public String toString() {
-        String name = "Extra-food shop";
-        String location = "Zgierz";
-        return  productList +
-                ", ze sklepu: " + name +
-                ", z lokalizacji: " + location;
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

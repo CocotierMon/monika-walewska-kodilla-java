@@ -18,8 +18,10 @@ public class OrderGenerator implements ProductOrder{
         int orderValue = order.getAmount() * order.getProduct().getValue();
         int order1Value = order1.getAmount() * order1.getProduct().getValue();
 
-        System.out.println(order + "Całkowita wartość zamówienia: " +orderValue);
-        System.out.println(order1 + "Całkowita wartość zamówienia: "+ order1Value);
+        System.out.println(order + "Całkowita wartość zamówienia ze sklepu " + extraFoodShop.getName() +
+                " " + extraFoodShop.getLocation() + ": " + orderValue);
+        System.out.println(order1 + "Całkowita wartość zamówienia ze sklepu " + glutenFreeShop.getName() +
+                " " + glutenFreeShop.getLocation() +": " + order1Value);
     }
 
     public Order getOrder() {

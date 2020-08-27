@@ -5,6 +5,9 @@ import java.util.List;
 
 public class HealthyShop implements Producers{
 
+    private final String name = "HealthyShop";
+    private final String location = "Pabianice";
+
     public HealthyShop() {
         this.initList();
     }
@@ -19,7 +22,6 @@ public class HealthyShop implements Producers{
         productList.add(product);
         productList.add(product1);
         productList.add(product2);
-
     }
 
     public List<Product> getProductList() {
@@ -35,12 +37,11 @@ public class HealthyShop implements Producers{
         return 0;
     }
 
-    @Override
-    public String toString() {
-        String name = "Extra-food shop";
-        String location = "Pabianice";
-        return productList +
-                ", ze sklepu: " + name +
-                ", z lokalizacji: " + location;
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }
