@@ -4,4 +4,7 @@ include 'kodilla-stream'
 include 'kodilla-exception'
 include 'snakes_and_ladders'
 include 'kodilla-good-patterns'
+include 'kodilla-patterns'
+include 'kodilla-jdbc'
+include 'kodilla-hibernate'
 
