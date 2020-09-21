@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 
@@ -24,6 +25,7 @@ public class InvoiceDaoTestSuite {
     private ItemDao itemDao;
 
     @Test
+    @Transactional
     public void testInvoiceDaoSave() {
         //Given
         Product product1 = new Product("Produkt 1");
@@ -31,7 +33,7 @@ public class InvoiceDaoTestSuite {
         Item item2 = new Item(new BigDecimal(30), 2, new BigDecimal(60));
         Invoice invoice1 = new Invoice("2020.09.16/1");
         product1.getItems().add(item1);
-        item1.setProduct(product1);
+        product1.getItems().add(item2);
         invoice1.getItems().add(item1);
         invoice1.getItems().add(item2);
         item1.setInvoice(invoice1);
@@ -40,11 +42,9 @@ public class InvoiceDaoTestSuite {
         productDao.save(product1);
         invoiceDao.save(invoice1);
         itemDao.save(item1);
-        int id = invoice1.getId();
+        int invoice1Id = invoice1.getId();
 
         //Then
-        Assert.assertNotEquals(0, id);
-        //CleanUp
-        invoiceDao.deleteById(id);
+        Assert.assertNotEquals(0, invoice1Id);
     }
 }
