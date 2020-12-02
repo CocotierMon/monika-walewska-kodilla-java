@@ -3,24 +3,25 @@ import com.kodilla.good.patterns.challenges.airport.FlightService;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashSet;
+import java.util.Set;
 
 public class FlightTestSuite {
 
     FlightService flights = new FlightService();
+    Flight flight;
 
     @Test
     public void showFlights() {
         //Given
         flights.createFlights();
         //When
-        HashSet<Flight> flightsToKrakow;
+        Set<Flight> flightsToKrakow;
         flightsToKrakow = flights.findFlightsTo("Krakow");
 
-        HashSet<Flight> flightsFromWroclaw;
+        Set<Flight> flightsFromWroclaw;
         flightsFromWroclaw = flights.findFlightsFrom("Wroclaw");
 
-        HashSet<Flight> flightsViaGdansk;
+        Set<Flight> flightsViaGdansk;
         flightsViaGdansk = flights.findFlightsVia("Lodz", "Gdansk", "Radom");
         //Then
         System.out.println(flightsToKrakow);

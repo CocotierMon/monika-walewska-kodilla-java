@@ -1,11 +1,12 @@
 package com.kodilla.good.patterns.challenges.airport;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class FlightService {
 
-    HashSet<Flight> flights;
+    private final HashSet<Flight> flights;
 
     public FlightService() {
         this.flights = createFlights();
@@ -26,24 +27,24 @@ public class FlightService {
         return flights;
     }
 
-    public HashSet<Flight> findFlightsFrom(String departure) {
+    public Set<Flight> findFlightsFrom(String departure) {
         return flights.stream()
                 .filter(flight -> flight.getDeparture().equals(departure))
-                .collect(Collectors.toCollection(HashSet::new));
+                .collect(Collectors.toSet());
     }
 
-    public HashSet<Flight> findFlightsTo(String arrival) {
+    public Set<Flight> findFlightsTo(String arrival) {
         return flights.stream()
                 .filter(flight -> flight.getArrival().equals(arrival))
-                .collect(Collectors.toCollection(HashSet::new));
+                .collect(Collectors.toSet());
         }
 
-    public HashSet<Flight> findFlightsVia(String departure, String via, String arrival) {
-        HashSet<Flight> fromDeparture = findFlightsFrom(departure).stream().filter(f -> f.getArrival().equals(via))
-                .collect(Collectors.toCollection(HashSet::new));
-        HashSet<Flight> toArrival = findFlightsTo(arrival).stream().filter(f -> f.getDeparture().equals(via))
-                .collect(Collectors.toCollection(HashSet::new));
-        HashSet<Flight> flightsVia = new HashSet<>();
+    public Set<Flight> findFlightsVia(String departure, String via, String arrival) {
+        Set<Flight> fromDeparture = findFlightsFrom(departure).stream().filter(f -> f.getArrival().equals(via))
+                .collect(Collectors.toSet());
+        Set<Flight> toArrival = findFlightsTo(arrival).stream().filter(f -> f.getDeparture().equals(via))
+                .collect(Collectors.toSet());
+        Set<Flight> flightsVia = new HashSet<>();
         flightsVia.addAll(fromDeparture);
         flightsVia.addAll(toArrival);
         return flightsVia;
