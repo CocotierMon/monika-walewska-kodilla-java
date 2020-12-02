@@ -3,7 +3,7 @@ import com.kodilla.good.patterns.challenges.airport.FlightService;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.List;
+import java.util.HashSet;
 
 public class FlightTestSuite {
 
@@ -14,13 +14,13 @@ public class FlightTestSuite {
         //Given
         flights.createFlights();
         //When
-        List<Flight> flightsToKrakow;
+        HashSet<Flight> flightsToKrakow;
         flightsToKrakow = flights.findFlightsTo("Krakow");
 
-        List<Flight> flightsFromWroclaw;
+        HashSet<Flight> flightsFromWroclaw;
         flightsFromWroclaw = flights.findFlightsFrom("Wroclaw");
 
-        List<Flight> flightsViaGdansk;
+        HashSet<Flight> flightsViaGdansk;
         flightsViaGdansk = flights.findFlightsVia("Lodz", "Gdansk", "Radom");
         //Then
         System.out.println(flightsToKrakow);

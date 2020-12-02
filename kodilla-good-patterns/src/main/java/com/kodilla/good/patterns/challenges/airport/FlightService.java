@@ -1,19 +1,18 @@
 package com.kodilla.good.patterns.challenges.airport;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.stream.Collectors;
 
 public class FlightService {
 
-    List<Flight> flights;
+    HashSet<Flight> flights;
 
     public FlightService() {
         this.flights = createFlights();
     }
 
-    public List<Flight> createFlights() {
-        List<Flight> flights = new ArrayList<>();
+    public HashSet<Flight> createFlights() {
+        HashSet<Flight> flights = new HashSet<>();
         flights.add(new Flight("Gdansk", "Krakow"));
         flights.add(new Flight("Krakow", "Gdansk"));
         flights.add(new Flight("Krakow", "Wroclaw"));
@@ -27,24 +26,27 @@ public class FlightService {
         return flights;
     }
 
-    public List<Flight> findFlightsFrom(String departure) {
+    public HashSet<Flight> findFlightsFrom(String departure) {
         return flights.stream()
-               .filter(flight -> flight.getDeparture().equals(departure)).collect(Collectors.toList());
+                .filter(flight -> flight.getDeparture().equals(departure))
+                .collect(Collectors.toCollection(HashSet::new));
     }
 
-    public List<Flight> findFlightsTo(String arrival) {
+    public HashSet<Flight> findFlightsTo(String arrival) {
         return flights.stream()
-                .filter(flight -> flight.getArrival().equals(arrival)).collect(Collectors.toList());
-    }
+                .filter(flight -> flight.getArrival().equals(arrival))
+                .collect(Collectors.toCollection(HashSet::new));
+        }
 
-    public List<Flight> findFlightsVia(String departure, String via, String arrival) {
-        List<Flight> fromDeparture = findFlightsFrom(departure).stream().filter(f -> f.getArrival().equals(via))
-                .collect(Collectors.toList());
-        List<Flight> toArrival = findFlightsTo(arrival).stream().filter(f -> f.getDeparture().equals(via))
-                .collect(Collectors.toList());
-        List<Flight> flightsVia = new ArrayList<>();
+    public HashSet<Flight> findFlightsVia(String departure, String via, String arrival) {
+        HashSet<Flight> fromDeparture = findFlightsFrom(departure).stream().filter(f -> f.getArrival().equals(via))
+                .collect(Collectors.toCollection(HashSet::new));
+        HashSet<Flight> toArrival = findFlightsTo(arrival).stream().filter(f -> f.getDeparture().equals(via))
+                .collect(Collectors.toCollection(HashSet::new));
+        HashSet<Flight> flightsVia = new HashSet<>();
         flightsVia.addAll(fromDeparture);
         flightsVia.addAll(toArrival);
         return flightsVia;
     }
 }
+
