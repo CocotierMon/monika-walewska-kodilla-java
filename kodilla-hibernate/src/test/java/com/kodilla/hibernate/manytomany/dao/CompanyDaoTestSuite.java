@@ -81,7 +81,7 @@ public class CompanyDaoTestSuite {
         int lindaKovalskyId = lindaKovalsky.getId();
 
         //When
-        List<Employee> employee1 = employeeDao.retrieveEmpoyeeByLastName("Smith");
+        List<Employee> employee1 = employeeDao.retrieveEmployeeByLastName("Smith");
 
         //Then
         Assert.assertEquals(1, employee1.size());
@@ -113,7 +113,7 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Company> company1 = companyDao.retrieveCompanyByNamesBeginnigWith("Sof");
+        List<Company> company1 = companyDao.retrieveCompanyByNamesBeginningWith("Sof");
 
         //Then
         Assert.assertEquals(1, company1.size());

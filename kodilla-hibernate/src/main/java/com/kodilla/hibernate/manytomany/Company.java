@@ -6,10 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedNativeQuery(
-        name = "Company.retrieveCompanyByNamesBeginnigWith",
+        name = "Company.retrieveCompanyByNamesBeginningWith",
         query = "SELECT * FROM COMPANIES" +
                 " WHERE LEFT(COMPANY_NAME, 3) = :NAME",
         resultClass = Company.class
+)
+
+@NamedQuery(
+        name = "Company.retrieveCompanyByItsFragmOfName",
+        query = "FROM Company WHERE COMPANY_NAME LIKE CONCAT('%', :LETTERS, '%')"
 )
 @Entity
 @Table(name = "COMPANIES")
@@ -54,4 +59,5 @@ public class Company {
 
     private void setName(String name) {
         this.name = name;
-    }}
+    }
+}

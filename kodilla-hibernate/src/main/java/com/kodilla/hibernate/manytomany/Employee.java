@@ -6,9 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(
-        name = "Employee.retrieveEmpoyeeByLastName",
+        name = "Employee.retrieveEmployeeByLastName",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+
+@NamedQuery(
+        name = "Employee.retrieveEmployeeByFragmOfName",
+        query = "FROM Employee WHERE LASTNAME LIKE CONCAT('%', :LETTERS, '%')"
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
